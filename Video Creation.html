@@ -5,23 +5,52 @@
   <title>Video Creation</title>
   <style>
     body {
-      font-family: "Open Sans", sans-serif;
+      position: relative;
+      font-family: "Times New Roman", Times, serif;
       line-height: 1.6;
       margin: 40px;
-      color: #333;
+      color: black;
+      background-color: white;
+      z-index: 1;
     }
+
+    /* ✅ Faded background image */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("images/DeployThoughts.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.20; /* ✅ adjust this value to control lightness */
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1, h2, p, ul, li {
+      position: relative;
+      z-index: 2;
+    }
+
     h1 {
       font-size: 2.5em;
-      color: #111;
+      color: black;
     }
+
     h2 {
-      color: #0077b6; /* Brand color */
+      color: #013856;
       margin-top: 30px;
     }
+
     ul {
       margin-top: 10px;
       padding-left: 20px;
     }
+
     li {
       margin-bottom: 10px;
     }
