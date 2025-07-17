@@ -1,0 +1,15 @@
+{
+  "name": "Deploy Thoughts",
+  "short_name": "DeployThoughts",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#013856",
+  "icons": [
+    {
+      "src": "images/logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
