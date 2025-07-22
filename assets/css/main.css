@@ -20,7 +20,7 @@ section, summary, time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font: "Times New Roman", Times, serif;
   vertical-align: baseline; }
 
 article, aside, details, figcaption, figure,
@@ -94,7 +94,7 @@ body {
 /* Type */
 body, input, select, textarea {
   color: black;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
@@ -133,8 +133,8 @@ p {
   margin: 0 0 2em 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: black;
-  font-family: "Roboto Slab", serif;
+  color: #013856;
+  font-family: "Times New Roman", Times, serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
@@ -198,14 +198,14 @@ code {
   background: rgba(230, 235, 237, 0.25);
   border-radius: 0.375em;
   border: solid 1px rgba(210, 215, 217, 0.75);
-  font-family: "Courier New", monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 0.9em;
   margin: 0 0.25em;
   padding: 0.25em 0.65em; }
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "Courier New", monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: 0.9em;
   margin: 0 0 2em 0; }
   pre code {
@@ -992,8 +992,8 @@ section.special, article.special {
   text-align: center; }
 
 header p {
-  font-family: "Roboto Slab", serif;
-  font-size: 1em;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.8em;
   font-weight: 400;
   letter-spacing: 0.075em;
   margin-top: -0.5em;
