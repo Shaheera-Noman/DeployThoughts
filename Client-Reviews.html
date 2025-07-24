@@ -12,6 +12,22 @@
       background-color: #f5f5f5;
       color: #333;
     }
+     /* ✅ Faded background image */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("images/DeployThoughts.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.20; /* ✅ adjust this value to control lightness */
+      pointer-events: none;
+      z-index: 0;
+    }
 
     header {
       background-color: #013856;
