@@ -1883,7 +1883,7 @@ button,
 
 /* Sidebar */
 #search-results {
-  max-height: 90px; /* You can adjust height */
+  max-height: 150px; /* You can adjust height */
   overflow-y: auto;
   margin-top: 10px;
   padding-right: 5px;
@@ -1898,7 +1898,7 @@ button,
 }
 
 #search-results::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+  background-color: #013856;
   border-radius: 4px;
 }
 
@@ -1950,7 +1950,7 @@ button,
   -webkit-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   -ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
   transition: margin-left 0.5s ease, box-shadow 0.5s ease;
-  background-color: #f5f6f7;
+  background-color: #dae9f9;
   font-size: 0.9em;
   position: relative;
   width: 26em; }
@@ -1971,7 +1971,7 @@ button,
         margin-bottom: 0;
         padding-bottom: 0; }
     #sidebar > .inner > .alt {
-      background-color: #eff1f2;
+      background-color: #dadbdb;
       border-bottom: 0;
       margin: -2.22222em 0 4.44444em -2.22222em;
       padding: 2.22222em;
@@ -2233,7 +2233,7 @@ button,
     color: inherit;
     cursor: pointer;
     display: block;
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding: 0.625em 0; }
     #menu ul a:hover, #menu ul span:hover {
       color: #0077b6; }
