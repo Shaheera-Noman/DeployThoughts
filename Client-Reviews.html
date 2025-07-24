@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Times New Roman", Times, serif;
       background-color: #f5f5f5;
       color: #333;
     }
@@ -16,39 +16,83 @@
     header {
       background-color: #013856;
       color: white;
-      padding: 30px;
+      padding: 50px;
       text-align: center;
     }
 
     h1 {
       margin: 0;
-      font-size: 2.2em;
+      font-size: 3em;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #06bdbd;
+    }
+
+    .circle-stories {
+      display: flex;
+      justify-content: center;
       gap: 30px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
+      margin: 50px 0;
+      flex-wrap: wrap;
     }
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .story {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #044141, #007766);
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 40px 12px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.03);
+    .story:hover {
+      transform: scale(1.05);
+    }
+
+    .story-inner {
+      width: 140px;
+      height: 140px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.3em;
+      padding: 10px;
+      box-sizing: border-box;
+      line-height: 1.3;
+    }
+
+    .review-images {
+      display: none;
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .review-images img {
+      width: 90%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 100px;
       color: #777;
       font-size: 0.9em;
     }
@@ -57,22 +101,68 @@
 <body>
 
   <header>
-    <h1>What Our Clients Say</h1>
-    <p>Real feedback from real people</p>
+    <h1>Client Reviews</h1>
+    <h2>What Our Clients Say About Us</h2>
   </header>
 
-  <div class="gallery">
-    <img src="images/Reviews/review1.jpg" alt="Client Review 1" />
-    <img src="images/Reviews/review2.jpg" alt="Client Review 2" />
-    <img src="images/Reviews/review3.jpg" alt="Client Review 3" />
-    <img src="images/Reviews/review4.jpg" alt="Client Review 4" />
-    <img src="images/Reviews/review5.jpg" alt="Client Review 5" />
-    <!-- Add or remove images as needed -->
+  <!-- Circle Style Review Buttons -->
+  <div class="circle-stories">
+    <div class="story" onclick="toggleReview('review1')">
+      <div class="story-inner">Review 1</div>
+    </div>
+    <div class="story" onclick="toggleReview('review2')">
+      <div class="story-inner">Review 2</div>
+    </div>
+    <div class="story" onclick="toggleReview('review3')">
+      <div class="story-inner">Review 3</div>
+    </div>
+    <div class="story" onclick="toggleReview('review4')">
+      <div class="story-inner">Review 4</div>
+    </div>
+    <div class="story" onclick="toggleReview('review5')">
+      <div class="story-inner">Review 5</div>
+    </div>
   </div>
 
-  <footer>
-    &copy; 2025 Deploy Thoughts. All rights reserved.
-  </footer>
+  <!-- Review Images -->
+  <div id="review1" class="review-images">
+    <h2>Review 1</h2>
+    <img src="images/Reviews/review1.jpg" alt="Client Review 1" />
+  </div>
+  <div id="review2" class="review-images">
+    <h2>Review 2</h2>
+    <img src="images/Reviews/review2.jpg" alt="Client Review 2" />
+  </div>
+  <div id="review3" class="review-images">
+    <h2>Review 3</h2>
+    <img src="images/Reviews/review3.jpg" alt="Client Review 3" />
+  </div>
+  <div id="review4" class="review-images">
+    <h2>Review 4</h2>
+    <img src="images/Reviews/review4.jpg" alt="Client Review 4" />
+  </div>
+  <div id="review5" class="review-images">
+    <h2>Review 5</h2>
+    <img src="images/Reviews/review5.jpg" alt="Client Review 5" />
+  </div>
+
+  <script>
+    function toggleReview(id) {
+      const section = document.getElementById(id);
+      const isVisible = section.style.display === 'block';
+
+      // Hide all reviews
+      document.querySelectorAll('.review-images').forEach(div => {
+        div.style.display = 'none';
+      });
+
+      // Toggle selected review
+      if (!isVisible) {
+        section.style.display = 'block';
+        window.scrollTo({ top: section.offsetTop - 60, behavior: 'smooth' });
+      }
+    }
+  </script>
 
 </body>
 </html>
