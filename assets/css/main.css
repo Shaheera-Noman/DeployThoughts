@@ -95,7 +95,7 @@ body {
 body, input, select, textarea {
   color: black;
   font-family: "Times New Roman", Times, serif;
-  font-size: 13pt;
+  font-size: 11pt;
   font-weight: 400;
   line-height: 1.65; }
   @media screen and (max-width: 1680px) {
@@ -1882,6 +1882,26 @@ button,
         padding: 3em 0 1em 0 ; } }
 
 /* Sidebar */
+#search-results {
+  max-height: 90px; /* You can adjust height */
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 5px;
+}
+
+#search-results li {
+  margin-bottom: 5px;
+}
+
+#search-results::-webkit-scrollbar {
+  width: 6px;
+}
+
+#search-results::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
 #search form {
   text-decoration: none;
   position: relative; }
