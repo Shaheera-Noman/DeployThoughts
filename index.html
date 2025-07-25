@@ -445,7 +445,7 @@
 <script>
   const pages = [
     { name: "Social Media Marketing & Management", file: "Social Media Marketing & Management.html" },
-	{ name: "Website Development", file: "Website Development.html" },
+    { name: "Website Development", file: "Website Development.html" },
     { name: "Lead Generation", file: "Lead Generation.html" },
     { name: "Data Cleaning & Visualization", file: "Data Cleaning & Visualization.html" },
     { name: "Content Writing & Research", file: "Content Writing & Research.html" },
@@ -454,11 +454,11 @@
     { name: "Video Creation", file: "Video Creation.html" },
     { name: "Logo Design", file: "Logo Design.html" },
     { name: "SQL Data Cleaning", file: "SQL Data Cleaning.html" },
-	{ name: "Portfolio", file: "Portfolio.html" },
-	{ name: "Client Reviews", file: "Client-Reviews.html" }
+    { name: "Portfolio", file: "Portfolio.html" },
+    { name: "Client Reviews", file: "Client-Reviews.html" }
   ];
 
-   function filterResults() {
+  function filterResults() {
     const input = document.getElementById("query").value.toLowerCase();
     const results = document.getElementById("search-results");
     results.innerHTML = "";
@@ -466,7 +466,7 @@
     if (input.length === 0) return;
 
     const matches = pages.filter(page =>
-      page.name.toLowerCase().includes(input) // allows partial matches
+      page.name.toLowerCase().includes(input)
     );
 
     matches.forEach(match => {
@@ -474,13 +474,35 @@
       const link = document.createElement("a");
       link.href = match.file;
       link.textContent = match.name;
-      link.style.textDecoration = "none";
-      link.style.color = "#0077b6";
+      link.className = "search-link"; // ✅ Add class
       li.appendChild(link);
       results.appendChild(li);
     });
   }
 </script>
+<style>
+  /* Search result list spacing adjustment */
+  #search-results li {
+    margin-bottom: 0.01px;   /* 🟢 Decreased space between items */
+    padding: 0;
+  }
+
+  .search-link {
+    display: inline-block;
+    font-size: 1.3em;
+    padding: 4px 10px; /* 🟢 Slightly reduced padding */
+    color: #013856;
+    transition: all 0.3s ease;
+  }
+
+  .search-link:hover {
+    background-color: #a5c3be;
+    color: white;
+    border-radius: 4px;
+  }
+</style>
+
+
 				
 							<!-- Menu -->
 								<nav id="menu">
