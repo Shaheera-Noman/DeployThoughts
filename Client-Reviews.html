@@ -12,7 +12,8 @@
       background-color: #f5f5f5;
       color: #333;
     }
-     /* ✅ Faded background image */
+
+    /* ✅ Faded background image */
     body::before {
       content: "";
       position: fixed;
@@ -24,7 +25,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      opacity: 0.20; /* ✅ adjust this value to control lightness */
+      opacity: 0.20;
       pointer-events: none;
       z-index: 0;
     }
@@ -112,33 +113,77 @@
       color: #777;
       font-size: 0.9em;
     }
+
+    /* ✅ Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #a5c3be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .loader-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
-<!-- Home Icon Link (Adjusted Position) -->
-<a href="index.html" style="
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  background-color: #06bdbd;
-  color: black;
-  padding: 10px 14px;
-  border-radius: 50%;
-  font-size: 1.4em;
-  text-decoration: none;
-  z-index: 1000;
-  box-shadow: 0 4px 1px rgba(0,0,0,0.2);
-  line-height: 1;
-" title="Go to Home">
-  &#8962;
-</a>
+
+<!-- ✅ Preloader HTML -->
 <body>
+  <div id="preloader">
+    <div class="loader-logo">
+      <img src="images/logo-icon.png" alt="Loading..." />
+    </div>
+  </div>
+
+  <!-- ✅ Home Icon -->
+  <a href="index.html" style="
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: #06bdbd;
+    color: black;
+    padding: 10px 14px;
+    border-radius: 50%;
+    font-size: 1.4em;
+    text-decoration: none;
+    z-index: 1000;
+    box-shadow: 0 4px 1px rgba(0,0,0,0.2);
+    line-height: 1;
+  " title="Go to Home">
+    &#8962;
+  </a>
 
   <header>
     <h1>Client Reviews</h1>
     <h2>What Our Clients Say About Us</h2>
   </header>
 
-  <!-- Circle Style Review Buttons -->
   <div class="circle-stories">
     <div class="story" onclick="toggleReview('review1')">
       <div class="story-inner">Review 1</div>
@@ -157,7 +202,6 @@
     </div>
   </div>
 
-  <!-- Review Images -->
   <div id="review1" class="review-images">
     <h2>Review 1</h2>
     <img src="images/Reviews/review1.jpg" alt="Client Review 1" />
@@ -179,22 +223,29 @@
     <img src="images/Reviews/review5.jpg" alt="Client Review 5" />
   </div>
 
+  <footer>
+    &copy; 2025 Deploy Thoughts. All rights reserved.
+  </footer>
+
   <script>
     function toggleReview(id) {
       const section = document.getElementById(id);
       const isVisible = section.style.display === 'block';
 
-      // Hide all reviews
       document.querySelectorAll('.review-images').forEach(div => {
         div.style.display = 'none';
       });
 
-      // Toggle selected review
       if (!isVisible) {
         section.style.display = 'block';
         window.scrollTo({ top: section.offsetTop - 60, behavior: 'smooth' });
       }
     }
+
+    // ✅ Hide preloader after load
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
   </script>
 
 </body>

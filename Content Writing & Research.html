@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>CONTENT WRITING & RESEARCH</title>
   <link rel="icon" href="images/logo-icon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       position: relative;
@@ -27,7 +28,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      opacity: 0.20; /* ✅ adjust this value to control lightness */
+      opacity: 0.20;
       pointer-events: none;
       z-index: 0;
     }
@@ -62,32 +63,78 @@
       font-size: 1.3em;
       margin-bottom: 10px;
     }
+
+    /* ✅ Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #a5c3be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .loader-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
-<!-- Home Icon Link (Adjusted Position) -->
-<a href="index.html" style="
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  background-color: #013856;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 50%;
-  font-size: 1.4em;
-  text-decoration: none;
-  z-index: 1000;
-  box-shadow: 0 4px 1px rgba(0,0,0,0.2);
-  line-height: 1;
-" title="Go to Home">
-  &#8962;
-</a>
+
 <body>
+
+  <!-- ✅ Preloader -->
+  <div id="preloader">
+    <div class="loader-logo">
+      <img src="images/logo-icon.png" alt="Loading..." />
+    </div>
+  </div>
+
+  <!-- ✅ Home Icon -->
+  <a href="index.html" style="
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: #013856;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 50%;
+    font-size: 1.4em;
+    text-decoration: none;
+    z-index: 1000;
+    box-shadow: 0 4px 1px rgba(0,0,0,0.2);
+    line-height: 1;
+  " title="Go to Home">
+    &#8962;
+  </a>
 
   <h1>Content Writing & Research</h1>
   <p>Whether it's blog posts, research articles, or SEO content. We write words that inform, inspire, and convert. Quality content, every time.</p>
 
   <section>
-    <h2>✍️ Content Writing Services</h2>
+    <h2> Content Writing Services</h2>
     <p>We craft compelling content that aligns with your goals and speaks directly to your audience.</p>
     <ul>
       <li>Website copywriting (Home, About, Services, etc.)</li>
@@ -100,7 +147,7 @@
   </section>
 
   <section>
-    <h2>🔍 Research & SEO Optimization</h2>
+    <h2> Research & SEO Optimization</h2>
     <p>Behind every great content piece is data. We conduct research to ensure your content is relevant, accurate, and search-engine optimized.</p>
     <ul>
       <li>Keyword research for SEO-rich writing</li>
@@ -113,7 +160,7 @@
   </section>
 
   <section>
-    <h2>✅ Why Choose Deploy Thoghts?</h2>
+    <h2> Why Choose Deploy Thoughts?</h2>
     <ul>
       <li>Skilled writers with research and SEO expertise</li>
       <li>Flexible tone, professional, friendly, or technical</li>
@@ -121,6 +168,12 @@
       <li>Tailored content for your brand and audience</li>
     </ul>
   </section>
+
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Social Media Marketing & Management</title>
   <link rel="icon" href="images/logo-icon.png" type="image/png" />
   <style>
@@ -27,9 +27,50 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      opacity: 0.20; /* ✅ adjust this value to control lightness */
+      opacity: 0.20;
       pointer-events: none;
       z-index: 0;
+    }
+
+    /* ✅ Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #a5c3be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .loader-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      pointer-events: none;
     }
 
     h1, h2, p, ul, li {
@@ -64,7 +105,8 @@
     }
   </style>
 </head>
-<!-- Home Icon Link (Adjusted Position) -->
+
+<!-- ✅ Home Icon -->
 <a href="index.html" style="
   position: fixed;
   top: 30px;
@@ -81,13 +123,21 @@
 " title="Go to Home">
   &#8962;
 </a>
+
 <body>
+
+  <!-- ✅ Preloader -->
+  <div id="preloader">
+    <div class="loader-logo">
+      <img src="images/logo-icon.png" alt="Loading..." />
+    </div>
+  </div>
 
   <h1>SOCIAL MEDIA MARKETING & MANAGEMENT</h1>
   <p>We help brands grow their online presence through strategic content, consistent engagement, and powerful advertising across major platforms like Facebook, Instagram, and TikTok.</p>
 
   <section>
-    <h2>✨ Social Media Account Management</h2>
+    <h2> Social Media Account Management</h2>
     <p>We manage your accounts so you can focus on your business. From planning to posting, we ensure your brand remains active, aligned, and engaging.</p>
     <ul>
       <li>Account setup and optimization (bio, profile image, highlights)</li>
@@ -101,7 +151,7 @@
   </section>
 
   <section>
-    <h2>🚀 Social Media Marketing & Advertising</h2>
+    <h2> Social Media Marketing & Advertising</h2>
     <p>We craft data-driven ad campaigns that attract the right audience and deliver real results, whether it's brand awareness, lead generation, or product sales.</p>
     <ul>
       <li>Facebook & Instagram paid ads setup</li>
@@ -115,7 +165,7 @@
   </section>
 
   <section>
-    <h2>🎯 Why Choose Deploy Thoughts?</h2>
+    <h2> Why Choose Deploy Thoughts?</h2>
     <ul>
       <li>Customized strategy tailored to your business goals</li>
       <li>Creative, professional designs that match your brand</li>
@@ -123,6 +173,13 @@
       <li>Results you can measure – Growth, Leads, Sales</li>
     </ul>
   </section>
+
+  <!-- ✅ Preloader Hide Script -->
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
 
 </body>
 </html>

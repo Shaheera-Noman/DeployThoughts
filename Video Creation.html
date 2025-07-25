@@ -27,11 +27,53 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      opacity: 0.20; /* ✅ adjust this value to control lightness */
+      opacity: 0.20;
       pointer-events: none;
       z-index: 0;
-        }
-        h1, h2, p, ul, li {
+    }
+
+    /* ✅ Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #a5c3be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .loader-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    h1, h2, p, ul, li {
       position: relative;
       z-index: 2;
     }
@@ -63,7 +105,8 @@
     }
   </style>
 </head>
-<!-- Home Icon Link (Adjusted Position) -->
+
+<!-- Home Icon -->
 <a href="index.html" style="
   position: fixed;
   top: 30px;
@@ -80,13 +123,21 @@
 " title="Go to Home">
   &#8962;
 </a>
+
 <body>
+
+  <!-- ✅ Preloader -->
+  <div id="preloader">
+    <div class="loader-logo">
+      <img src="images/logo-icon.png" alt="Loading..." />
+    </div>
+  </div>
 
   <h1>VIDEO CREATION</h1>
   <p>From animated explainers to product promos, we craft videos that elevate your message and capture attention across digital platforms.</p>
 
   <section>
-    <h2>🎥 What We Create</h2>
+    <h2> What We Create</h2>
     <p>Engage your audience with visually striking and meaningful video content.</p>
     <ul>
       <li>Animated explainer videos</li>
@@ -99,7 +150,7 @@
   </section>
 
   <section>
-    <h2>💡 Our Video Process</h2>
+    <h2> Our Video Process</h2>
     <p>We ensure your story is told with clarity, emotion, and precision from script to screen.</p>
     <ul>
       <li>Scriptwriting and concept development</li>
@@ -111,7 +162,7 @@
   </section>
 
   <section>
-    <h2>✅ Why Choose Deploy Thoughts?</h2>
+    <h2> Why Choose Deploy Thoughts?</h2>
     <ul>
       <li>Customized videos tailored to your goals</li>
       <li>Quick delivery and unlimited revisions</li>
@@ -119,6 +170,13 @@
       <li>High-quality visuals and impactful messaging</li>
     </ul>
   </section>
+
+  <!-- ✅ Preloader Script -->
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
 
 </body>
 </html>
