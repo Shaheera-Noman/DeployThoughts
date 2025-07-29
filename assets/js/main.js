@@ -74,13 +74,18 @@
 			$sidebar_inner = $sidebar.children('.inner');
 
 		// Inactive by default on <= large.
-			breakpoints.on('<=large', function() {
-				$sidebar.addClass('inactive');
-			});
+			// ✅ Always keep sidebar inactive by default
+			$sidebar.addClass('inactive');
 
 			breakpoints.on('>large', function() {
-				$sidebar.removeClass('inactive');
+			// Do NOT auto-show sidebar on large screens anymore
+			// So we leave this empty
 			});
+
+			breakpoints.on('<=large', function() {
+			$sidebar.addClass('inactive');
+			});
+
 
 		// Hack: Workaround for Chrome/Android scrollbar position bug.
 			if (browser.os == 'android'
