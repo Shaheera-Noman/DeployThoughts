@@ -45,7 +45,17 @@
 				height="0" width="0" style="display:none;visibility:hidden"></iframe>
 			</noscript>
 			<!-- End Google Tag Manager (noscript) -->
-
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+      <style>
+        html {
+          scroll-behavior: smooth;
+        }
+        .nav-link {
+          cursor: pointer;
+          text-decoration: none;
+          color: inherit;
+        }
+      </style>
     <!-- ✅ Preloader -->
     <div id="preloader">
       <div class="loader-logo">
@@ -53,6 +63,7 @@
       </div>
     </div>
 <style>
+  
   /* Preloader styles */
   #preloader {
     position: fixed;
@@ -117,7 +128,7 @@
 							<!-- Banner -->
     <section id="banner">
   <div id="welcome"></div>
-	<div class="content">
+	<div class="inner">
 					<header>
 						<h1 style="font-size: 2.7em;">
 			DEPLOY THOUGHTS
@@ -146,74 +157,75 @@
 
 
 
-								<!-- Section -->
-							<section id="about">
-  <header class="major">
-    <h2 style="font-size: 2.7em;">WELCOME TO DEPLOY THOUGHTS</h2>
-  </header>
-  <div class="features">
-    <article>
-      <span class="icon fa-user-circle"></span>
-      <div class="content">
-        <h3 style="font-size: 1.8em;">
-          <a href="#welcome" style="text-decoration: none; color: inherit;">Who We Are</a>
-        </h3>
-        <p style="font-size: 1.3em;">
-          We are a creative hub offering design, data, and digital services. From dashboard creation to dynamic websites, we help individuals and businesses grow with purpose and impact.
-        </p>
-      </div>
-    </article>
-    <article>
-      <span class="icon solid fa-tools"></span>
-      <div class="content">
-        <h3 style="font-size: 1.8em;">
-          <a href="#services" style="text-decoration: none; color: inherit;">What We Do</a>
-        </h3>
-        <p style="font-size: 1.3em;">
-          Our services include web design, Power BI dashboards, social media ads, ecommerce setup, and lead generation. Everything you need to boost your digital presence.
-        </p>
-      </div>
-    </article>
-    <article>
-      <span class="icon solid fa-calendar-alt"></span>
-      <div class="content">
-        <h3 style="font-size: 1.8em;">
-          <a href="https://calendar.app.google/yd8cBsM7qe1bbr699" target="_blank" style="text-decoration: none; color: inherit;">
-            Book a Call
-          </a>
-        </h3>
-        <p style="font-size: 1.3em;">
-          Want to discuss your project or get a quote? Click above to schedule a free consultation and let's turn your vision into action.
-        </p>
-      </div>
-    </article>
-    <article>
-      <span class="icon solid fa-envelope-open-text"></span>
-      <div class="content">
-        <h3 style="font-size: 1.8em;">
-          <a href="#contact" style="text-decoration: none; color: inherit;">Get in Touch</a>
-        </h3>
-        <p style="font-size: 1.3em;">
-          We're just one message away. Reach out via email, social media, or our contact form and let's start creating something impactful together.
-        </p>
-      </div>
-    </article>
-  </div>
-</section>
+            <!-- Section -->
+            <section id="about">
+              <header class="inner">
+                <h2 style="font-size: 2.7em;">WELCOME TO DEPLOY THOUGHTS</h2>
+              </header>
+              <div class="features">
+                <article>
+                  <span class="icon fa-user-circle"></span>
+                  <div class="content">
+                    <h3 style="font-size: 1.8em;">
+                      <a href="javascript:void(0)" onclick="scrollToSection('welcome')" style="text-decoration: none; color: inherit;">Who We Are</a>
+                    </h3>
+                    <p style="font-size: 1.3em;">
+                      We are a creative hub offering design, data, and digital services. From dashboard creation to dynamic websites, we help individuals and businesses grow with purpose and impact.
+                    </p>
+                  </div>
+                </article>
+                <article>
+                  <span class="icon solid fa-tools"></span>
+                  <div class="content">
+                    <h3 style="font-size: 1.8em;">
+                      <a href="javascript:void(0)" onclick="scrollToSection('services')" style="text-decoration: none; color: inherit;">What We Do</a>
+                    </h3>
+                    <p style="font-size: 1.3em;">
+                      Our services include web design, Power BI dashboards, social media ads, ecommerce setup, and lead generation. Everything you need to boost your digital presence.
+                    </p>
+                  </div>
+                </article>
+                <article>
+                  <span class="icon solid fa-calendar-alt"></span>
+                  <div class="content">
+                    <h3 style="font-size: 1.8em;">
+                      <a href="https://calendar.app.google/yd8cBsM7qe1bbr699" target="_blank" style="text-decoration: none; color: inherit;">
+                        Book a Call
+                      </a>
+                    </h3>
+                    <p style="font-size: 1.3em;">
+                      Want to discuss your project or get a quote? Click above to schedule a free consultation and let's turn your vision into action.
+                    </p>
+                  </div>
+                </article>
+                <article>
+                  <span class="icon solid fa-envelope-open-text"></span>
+                  <div class="content">
+                    <h3 style="font-size: 1.8em;">
+                      <a href="javascript:void(0)" onclick="scrollToSection('contact')" style="text-decoration: none; color: inherit;">Get in Touch</a>
+                    </h3>
+                    <p style="font-size: 1.3em;">
+                      We're just one message away. Reach out via email, social media, or our contact form and let's start creating something impactful together.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </section>
 
 
-								<!-- ✅ Your quote inserted below ABOUT section -->
-								<div style="text-align: center; margin-top: 2em;">
-									<p style="font-weight: bold; font-size: 2em; color: black;">
-										Driven by results, not contracts. Where quality always outweighs quantity.
-									</p>
-								</div>
+
+                            <!-- ✅ Your quote inserted below ABOUT section -->
+                            <div style="text-align: center; margin-top: 2em;">
+                              <p style="font-weight: bold; font-size: 2em; color: black;">
+                                Driven by results, not contracts. Where quality always outweighs quantity.
+                              </p>
+                            </div>
 
 
 
 							<!-- Section -->
 								<section id="services">
-<header class="major">
+<header class="inner">
     <h2 style="font-size: 2.7em;">OUR SERVICES</h2>
   </header>
   <div class="posts">
@@ -405,7 +417,7 @@
 </section>
 <!-- Portfolio Section with Expandable Box -->
 <section id="portfolio" style="display: none;">
-  <header class="major">
+  <header class="inner">
     <h2 style="font-size: 2.7em;">PORTFOLIO</h2>
   </header>
 
@@ -421,7 +433,7 @@
 
 <!-- Reviews Section with Expandable Box -->
 <section id="reviews">
-  <header class="major">
+  <header class="inner">
     <h2 style="font-size: 2.7em;">CLIENT REVIEWS</h2>
   </header>
 
@@ -437,7 +449,7 @@
 
 <!-- Contact Form Section -->
 <section id="contact">
-  <header class="major">
+  <header class="inner">
     <h2 style="font-size: 2.7em;">CONTACT US</h2>
   </header>
 
@@ -554,11 +566,11 @@
 										<h2 style="font-size: 2.2em;">MENU</h2>
 									</header>
 										    <ul>
-												<li style="font-size: 1.5em;"><a href="#banner">Home</a></li>
-												<li style="font-size: 1.5em;"><a href="#about">About</a></li>
-												<li style="font-size: 1.5em;"><a href="#services">Services</a></li>
-												<li style="font-size: 1.5em;"><a href="#reviews">Reviews</a></li>
-												<li style="font-size: 1.5em;"><a href="#contact">Contact</a></li>
+												<li style="font-size: 1.5em;"><a class="nav-link" data-target="banner">Home</a></li>
+												<li style="font-size: 1.5em;"><a class="nav-link" data-target="about">About</a></li>
+												<li style="font-size: 1.5em;"><a class="nav-link" data-target="services">Services</a></li>
+												<li style="font-size: 1.5em;"><a class="nav-link" data-target="reviews">Reviews</a></li>
+												<li style="font-size: 1.5em;"><a class="nav-link" data-target="contact">Contact</a></li>
 											</ul>
 								</nav>
 
@@ -637,6 +649,37 @@
 		<script src="assets/js/breakpoints.min.js" defer></script>
 		<script src="assets/js/util.js" defer></script>
 		<script src="assets/js/main.js" defer></script>
+
+    <!-- Clean URL & Smooth Scroll Script -->
+    <script>
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('data-target');
+          const targetEl = document.getElementById(targetId);
+
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+
+            if (history.pushState) {
+              history.pushState(null, '', window.location.pathname);
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) {
+          window.scrollTo({
+            top: el.offsetTop - 50,
+            behavior: 'smooth'
+          });
+        }
+      }
+    </script>
+    
 
 		<!-- Structured Data for Google Logo -->
 		<script type="application/ld+json">
