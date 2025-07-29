@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Social Media Marketing & Management</title>
+  <link rel="icon" href="images/logo-icon.png" type="image/png" />
+  <style>
+    body {
+      position: relative;
+      font-family: "Times New Roman", Times, serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: black;
+      background-color: white;
+      z-index: 1;
+    }
+
+    /* ✅ Faded background image */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("images/DeployThoughts.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.20;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ✅ Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #a5c3be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .loader-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    h1, h2, p, ul, li {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: black;
+    }
+
+    h2 {
+      font-size: 2.0em;
+      color: #013856;
+      margin-top: 30px;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<!-- ✅ Home Icon -->
+<a href="index.html" style="
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: #013856;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 1.4em;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 1px rgba(0,0,0,0.2);
+  line-height: 1;
+" title="Go to Home">
+  &#8962;
+</a>
+
+<body>
+
+  <!-- ✅ Preloader -->
+  <div id="preloader">
+    <div class="loader-logo">
+      <img src="images/logo-icon.png" alt="Loading..." />
+    </div>
+  </div>
+
+  <h1>SOCIAL MEDIA MARKETING & MANAGEMENT</h1>
+  <p>We help brands grow their online presence through strategic content, consistent engagement, and powerful advertising across major platforms like Facebook, Instagram, and TikTok.</p>
+
+  <section>
+    <h2> Social Media Account Management</h2>
+    <p>We manage your accounts so you can focus on your business. From planning to posting, we ensure your brand remains active, aligned, and engaging.</p>
+    <ul>
+      <li>Account setup and optimization (bio, profile image, highlights)</li>
+      <li>Content calendar creation and scheduling</li>
+      <li>Graphic design and branded post templates</li>
+      <li>Caption writing with relevant hashtags and CTAs</li>
+      <li>Consistent posting and audience engagement</li>
+      <li>Inbox and comment management (community handling)</li>
+      <li>Weekly performance tracking and reports</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2> Social Media Marketing & Advertising</h2>
+    <p>We craft data-driven ad campaigns that attract the right audience and deliver real results, whether it's brand awareness, lead generation, or product sales.</p>
+    <ul>
+      <li>Facebook & Instagram paid ads setup</li>
+      <li>Target audience research & interest-based targeting</li>
+      <li>Campaign design with scroll-stopping visuals</li>
+      <li>Pixel setup and conversion tracking</li>
+      <li>A/B testing for creatives and copy</li>
+      <li>Ad performance optimization and scaling</li>
+      <li>Monthly advertising reports with insights</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2> Why Choose Deploy Thoughts?</h2>
+    <ul>
+      <li>Customized strategy tailored to your business goals</li>
+      <li>Creative, professional designs that match your brand</li>
+      <li>Real-time support and transparent communication</li>
+      <li>Results you can measure – Growth, Leads, Sales</li>
+    </ul>
+  </section>
+
+  <!-- ✅ Preloader Hide Script -->
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+</body>
+</html>

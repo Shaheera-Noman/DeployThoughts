@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SQL Data Cleaning</title>
+  <link rel="icon" href="images/logo-icon.png" type="image/png" />
+  <style>
+    body {
+      position: relative;
+      font-family: "Times New Roman", Times, serif;
+      line-height: 1.6;
+      margin: 40px;
+      color: black;
+      background-color: white;
+      z-index: 1;
+    }
+
+    /* ✅ Faded background image */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("images/DeployThoughts.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.20;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ✅ Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #a5c3be;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .loader-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    h1, h2, p, ul, li {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: black;
+    }
+
+    h2 {
+      font-size: 2.0em;
+      color: #013856;
+      margin-top: 30px;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<!-- Home Icon -->
+<a href="index.html" style="
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: #013856;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 1.4em;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 1px rgba(0,0,0,0.2);
+  line-height: 1;
+" title="Go to Home">
+  &#8962;
+</a>
+
+<body>
+
+  <!-- ✅ Preloader -->
+  <div id="preloader">
+    <div class="loader-logo">
+      <img src="images/logo-icon.png" alt="Loading..." />
+    </div>
+  </div>
+
+  <h1>SQL DATA CLEANING</h1>
+  <p>We write efficient SQL queries to clean, filter, and transform your raw data into actionable datasets that are ready for reporting or analysis.</p>
+
+  <section>
+    <h2> SQL Data Cleaning Services</h2>
+    <p>We help you prepare clean and reliable data for your dashboards, reports, or systems.</p>
+    <ul>
+      <li>Removing duplicates and irrelevant rows</li>
+      <li>Handling NULL values and missing data</li>
+      <li>Data type correction and formatting (DATE, TEXT, INT, etc.)</li>
+      <li>Standardizing inconsistent values (e.g., “USA” vs. “United States”)</li>
+      <li>Joining and merging datasets for unified output</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2> Query Optimization & Structuring</h2>
+    <p>We ensure your queries are clean, readable, and optimized for performance.</p>
+    <ul>
+      <li>Using CTEs and subqueries for logical clarity</li>
+      <li>Index-aware filtering for large datasets</li>
+      <li>CASE statements for conditional transformation</li>
+      <li>Window functions for ranking, aggregations, and more</li>
+      <li>Scalable scripts for recurring cleaning tasks</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2> Why Choose Deploy Thoughts?</h2>
+    <ul>
+      <li>Strong command of MySQL, PostgreSQL, SQL Server & SQLite</li>
+      <li>Clean, modular, and documented code delivery</li>
+      <li>Integration-ready output for BI tools or databases</li>
+      <li>Quick turnaround with attention to data accuracy</li>
+    </ul>
+  </section>
+
+  <!-- ✅ Preloader Script -->
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+</body>
+</html>
