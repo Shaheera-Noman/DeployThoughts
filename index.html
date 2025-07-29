@@ -38,6 +38,8 @@
 </head>
 
 	<body class="is-preload">
+    <!-- Scroll to Top Button -->
+    <a href="#" id="scrollToTop" title="Back to Top">&#8679;</a>
 
 		<!-- ✅ Google Tag Manager (noscript) -->
 			<noscript>
@@ -55,6 +57,27 @@
           text-decoration: none;
           color: inherit;
         }
+        #scrollToTop {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          background-color: #013856;
+          color: white;
+          padding: 12px 16px;
+          font-size: 1.5em;
+          border-radius: 50%;
+          text-align: center;
+          text-decoration: none;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+          z-index: 9999;
+          display: none;
+          transition: opacity 0.3s ease;
+        }
+        
+        #scrollToTop:hover {
+          background-color: #06bdbd;
+          color: white;
+        }        
       </style>
     <!-- ✅ Preloader -->
     <div id="preloader">
@@ -688,6 +711,24 @@
 		"logo": "https://www.deploythoughts.com/images/logo-icon.png"
 		}
 		</script>
+    <script>
+      // Show button on scroll
+      window.addEventListener("scroll", function () {
+        const scrollBtn = document.getElementById("scrollToTop");
+        if (window.scrollY > 200) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      });
+    
+      // Smooth scroll to top
+      document.getElementById("scrollToTop").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+    
     <script>
       window.addEventListener('load', function () {
         const preloader = document.getElementById('preloader');
