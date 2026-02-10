@@ -1,281 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Client Reviews – Deploy Thoughts</title>
-  <link rel="icon" href="images/logo-icon.png" type="image/png" />
-  <style>
-    body {
-      margin: 0;
-      font-family: "Times New Roman", Times, serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Reviews – DeployThoughts</title>
+<link rel="icon" href="images/logo-icon.png">
 
-    /* ✅ Faded background image */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-image: url("images/DeployThoughts.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      opacity: 0.20;
-      pointer-events: none;
-      z-index: 0;
-    }
+<style>
+body{
+  margin:0;
+  font-family:"Segoe UI",sans-serif;
+  background:#f5f5f5;
+  color:#333;
+}
 
-    header {
-      background-color: #013856;
-      color: white;
-      padding: 50px;
-      text-align: center;
-    }
+/* Header */
+header{
+  background:#013856;
+  color:#fff;
+  text-align:center;
+  padding:60px 20px;
+}
+header h1{font-size:3em;margin:0;}
+header h2{color:#06bdbd;margin-top:10px;}
 
-    h1 {
-      margin: 0;
-      font-size: 3em;
-    }
+/* Grid */
+.reviews-grid{
+  max-width:1200px;
+  margin:60px auto 30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  padding:0 20px;
+}
 
-    h2 {
-      margin-top: 0;
-      font-size: 1.5em;
-      color: #06bdbd;
-    }
+/* Card */
+.review-card{
+  background:#fff;
+  border-radius:15px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transition:transform .3s ease;
+}
+.review-card:hover{transform:translateY(-6px);}
 
-    .circle-stories {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 50px 0;
-      flex-wrap: wrap;
-    }
+.review-card h3{
+  margin:0;
+  font-size:1.2em;
+  color:#013856;
+}
+.review-card span{
+  font-size:.9em;
+  color:#06bdbd;
+  font-weight:600;
+}
+.review-card p{
+  margin:15px 0;
+  line-height:1.6;
+  font-size:.95em;
+}
+.review-card button{
+  align-self:flex-start;
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
+  background:#06bdbd;
+  color:#000;
+  cursor:pointer;
+  font-weight:600;
+}
 
-    .story {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #044141, #007766);
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 40px 12px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease;
-    }
+/* View All button under cards */
+.view-all-wrapper{
+  text-align:center;
+  margin-bottom:60px;
+}
+.view-all-wrapper button{
+  padding:14px 26px;
+  border:none;
+  border-radius:10px;
+  background:#013856;
+  color:#fff;
+  font-size:1em;
+  font-weight:600;
+  cursor:pointer;
+}
 
-    .story:hover {
-      transform: scale(1.05);
-    }
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
 
-    .story-inner {
-      width: 140px;
-      height: 140px;
-      background-color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.3em;
-      padding: 10px;
-      box-sizing: border-box;
-      line-height: 1.3;
-    }
+.modal-content{
+  background:#fff;
+  padding:25px;
+  max-width:750px;
+  width:90%;
+  border-radius:14px;
+  text-align:center;
+}
 
-    .review-images {
-      display: none;
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
+.modal-content video{
+  width:50%;
+  border-radius:10px;
+}
 
-    .review-images img {
-      width: 90%;
-      max-width: 600px;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+/* Gallery */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+.gallery-grid img{
+  width:100%;
+  border-radius:8px;
+  box-shadow:0 6px 12px rgba(0,0,0,0.15);
+}
 
-    footer {
-      text-align: center;
-      padding: 100px;
-      color: #777;
-      font-size: 0.9em;
-    }
-
-    /* ✅ Preloader styles */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #a5c3be;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
-
-    .loader-logo {
-      width: 100px;
-      height: 100px;
-      animation: bounce 1.5s infinite;
-    }
-
-    .loader-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
-    }
-
-    body.loaded #preloader {
-      opacity: 0;
-      pointer-events: none;
-    }
-  </style>
+.close{
+  margin-top:18px;
+  cursor:pointer;
+  font-weight:600;
+  color:#013856;
+}
+</style>
 </head>
 
-<!-- ✅ Preloader HTML -->
 <body>
-  <div id="preloader">
-    <div class="loader-logo">
-      <img src="images/logo-icon.png" alt="Loading..." />
-    </div>
+
+<header>
+  <h1>Client Reviews</h1>
+  <h2>What Clients Say About DeployThoughts</h2>
+</header>
+
+<section class="reviews-grid">
+
+  <div class="review-card">
+    <h3>Precious Fuller</h3>
+    <span>Founder & CEO of Equanimity Partners Intl</span>
+    <p>Exceptional attention to detail and clear insights. Highly recommended.</p>
+    <button onclick="openReview('review1')">View Review</button>
   </div>
 
-  <!-- ✅ Home Icon -->
-  <a href="index.html" style="
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    background-color: #06bdbd;
-    color: black;
-    padding: 10px 14px;
-    border-radius: 50%;
-    font-size: 1.4em;
-    text-decoration: none;
-    z-index: 1000;
-    box-shadow: 0 4px 1px rgba(0,0,0,0.2);
-    line-height: 1;
-  " title="Go to Home">
-    &#8962;
-  </a>
-
-  <header>
-    <h1>Client Reviews</h1>
-    <h2>What Our Clients Say About Us</h2>
-  </header>
-
-  <div class="circle-stories">
-    <div class="story" onclick="toggleReview('review1')">
-      <div class="story-inner">Review 1</div>
-    </div>
-    <div class="story" onclick="toggleReview('review2')">
-      <div class="story-inner">Review 2</div>
-    </div>
-    <div class="story" onclick="toggleReview('review3')">
-      <div class="story-inner">Review 3</div>
-    </div>
-    <div class="story" onclick="toggleReview('review4')">
-      <div class="story-inner">Review 4</div>
-    </div>
-    <div class="story" onclick="toggleReview('review5')">
-      <div class="story-inner">Review 5</div>
-    </div>
-    <div class="story" onclick="toggleReview('review6')">
-      <div class="story-inner">Review 6</div>
-    </div>
-    <div class="story" onclick="toggleReview('review7')">
-      <div class="story-inner">Review 7</div>
-    </div>
-    <div class="story" onclick="toggleReview('review8')">
-      <div class="story-inner">Review 8</div>
-    </div>
+  <div class="review-card">
+    <h3>Suzanne</h3>
+    <span>Social Media Management</span>
+    <p>Professional strategy and great communication throughout the project.</p>
+    <button onclick="openReview('review2')">View Review</button>
   </div>
 
-  <div id="review1" class="review-images">
-    <h2>Review 1</h2>
-    <img src="images/Reviews/review1.jpg" alt="Client Review 1" />
+  <div class="review-card">
+    <h3>Laura Beth Ryan</h3>
+    <span>Life Coach - Cheerful Hearts</span>
+    <p>Delivered beyond expectations. Clean, modern, and effective work.</p>
+    <button onclick="openReview('review3')">View Review</button>
   </div>
-  <div id="review2" class="review-images">
-    <h2>Review 2</h2>
-    <img src="images/Reviews/review2.jpg" alt="Client Review 2" />
-  </div>
-  <div id="review3" class="review-images">
-    <h2>Review 3</h2>
-    <img src="images/Reviews/review3.jpg" alt="Client Review 3" />
-  </div>
-  <div id="review4" class="review-images">
-    <h2>Review 4</h2>
-    <img src="images/Reviews/review4.jpg" alt="Client Review 4" />
-  </div>
-  <div id="review5" class="review-images">
-    <h2>Review 5</h2>
-    <img src="images/Reviews/review5.jpg" alt="Client Review 5" />
-  </div>
-  <div id="review6" class="review-images">
-  <h2>Review 6</h2>
-  <video controls controlsList="nodownload" width="50%">
-    <source src="images/Reviews/Laura.mp4" type="video/mp4">
-  </video>
-</div>
-  <div id="review7" class="review-images">
-  <h2>Review 7</h2>
-  <video controls controlsList="nodownload" width="50%">
-    <source src="images/Reviews/Suzanne.mp4" type="video/mp4">
-  </video>
-</div>
-  <div id="review8" class="review-images">
-  <h2>Review 8</h2>
-  <video controls controlsList="nodownload" width="50%">
-    <source src="images/Reviews/Precious Fuller.mp4" type="video/mp4">
-  </video>
+
+</section>
+
+<!-- VIEW ALL BUTTON (SEPARATE) -->
+<div class="view-all-wrapper">
+  <button onclick="openReview('allReviews')">View All Reviews</button>
 </div>
 
-  <script>
-    function toggleReview(id) {
-      const section = document.getElementById(id);
-      const isVisible = section.style.display === 'block';
+<!-- VIDEO MODALS -->
 
-      document.querySelectorAll('.review-images').forEach(div => {
-        div.style.display = 'none';
-      });
+<div id="review1" class="modal">
+  <div class="modal-content">
+    <video controls controlsList="nodownload">
+      <source src="images/Reviews/Precious Fuller.mp4" type="video/mp4">
+    </video>
+    <div class="close" onclick="closeReview('review1')">Back</div>
+  </div>
+</div>
 
-      if (!isVisible) {
-        section.style.display = 'block';
-        window.scrollTo({ top: section.offsetTop - 60, behavior: 'smooth' });
-      }
-    }
+<div id="review2" class="modal">
+  <div class="modal-content">
+    <video controls controlsList="nodownload">
+      <source src="images/Reviews/Suzanne.mp4" type="video/mp4">
+    </video>
+    <div class="close" onclick="closeReview('review2')">Back</div>
+  </div>
+</div>
 
-    // ✅ Hide preloader after load
-    window.addEventListener("load", function () {
-      document.body.classList.add("loaded");
-    });
-  </script>
+<div id="review3" class="modal">
+  <div class="modal-content">
+    <video controls controlsList="nodownload">
+      <source src="images/Reviews/Laura.mp4" type="video/mp4">
+    </video>
+    <div class="close" onclick="closeReview('review3')">Back</div>
+  </div>
+</div>
+
+<!-- IMAGE GALLERY MODAL -->
+
+<div id="allReviews" class="modal">
+  <div class="modal-content">
+    <h3 style="color:#013856;">All Client Reviews</h3>
+
+    <div class="gallery-grid">
+      <img src="images/Reviews/review1.jpg">
+      <img src="images/Reviews/review2.jpg">
+      <img src="images/Reviews/review3.jpg">
+      <img src="images/Reviews/review4.jpg">
+      <img src="images/Reviews/review5.jpg">
+    </div>
+
+    <div class="close" onclick="closeReview('allReviews')">Back</div>
+  </div>
+</div>
+
+<script>
+function openReview(id){
+  document.getElementById(id).style.display="flex";
+}
+function closeReview(id){
+  document.getElementById(id).style.display="none";
+}
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
