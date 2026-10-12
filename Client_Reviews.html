@@ -144,26 +144,33 @@ header h2{color:#06bdbd;margin-top:10px;}
 </header>
 
 <section class="reviews-grid">
+  
+  <div class="review-card">
+    <h3>Kunal Batavia</h3>
+    <span>CEO of OpenScope Realty</span>
+    <p>Help investors turn small investments into long-term wealth.</p>
+    <button onclick="openReview('review1')">View Review</button>
+  </div>
 
   <div class="review-card">
     <h3>Precious Fuller</h3>
     <span>Founder & CEO of Equanimity Partners Intl</span>
     <p>Exceptional attention to detail and clear insights. Highly recommended.</p>
-    <button onclick="openReview('review1')">View Review</button>
+    <button onclick="openReview('review2')">View Review</button>
   </div>
 
   <div class="review-card">
     <h3>Suzanne Sheedy</h3>
     <span>Self-Leader Coach for Mums</span>
     <p>Professional strategy and great communication throughout the project.</p>
-    <button onclick="openReview('review2')">View Review</button>
+    <button onclick="openReview('review3')">View Review</button>
   </div>
 
   <div class="review-card">
     <h3>Laura Beth Ryan</h3>
     <span>Life Coach - Cheerful Hearts</span>
     <p>Delivered beyond expectations. Clean, modern, and effective work.</p>
-    <button onclick="openReview('review3')">View Review</button>
+    <button onclick="openReview('review4')">View Review</button>
   </div>
 
 </section>
@@ -174,20 +181,20 @@ header h2{color:#06bdbd;margin-top:10px;}
 </div>
 
 <!-- VIDEO MODALS -->
-
 <div id="review1" class="modal">
   <div class="modal-content">
     <video controls controlsList="nodownload">
-      <source src="images/Reviews/Precious Fuller.mp4" type="video/mp4">
+      <source src="images/Reviews/Kunal.mp4" type="video/mp4">
     </video>
     <div class="close" onclick="closeReview('review1')">Back</div>
   </div>
 </div>
-
+  
+  
 <div id="review2" class="modal">
   <div class="modal-content">
     <video controls controlsList="nodownload">
-      <source src="images/Reviews/Suzanne.mp4" type="video/mp4">
+      <source src="images/Reviews/Precious Fuller.mp4" type="video/mp4">
     </video>
     <div class="close" onclick="closeReview('review2')">Back</div>
   </div>
@@ -196,9 +203,18 @@ header h2{color:#06bdbd;margin-top:10px;}
 <div id="review3" class="modal">
   <div class="modal-content">
     <video controls controlsList="nodownload">
-      <source src="images/Reviews/Laura.mp4" type="video/mp4">
+      <source src="images/Reviews/Suzanne.mp4" type="video/mp4">
     </video>
     <div class="close" onclick="closeReview('review3')">Back</div>
+  </div>
+</div>
+
+<div id="review4" class="modal">
+  <div class="modal-content">
+    <video controls controlsList="nodownload">
+      <source src="images/Reviews/Laura.mp4" type="video/mp4">
+    </video>
+    <div class="close" onclick="closeReview('review4')">Back</div>
   </div>
 </div>
 
@@ -214,6 +230,8 @@ header h2{color:#06bdbd;margin-top:10px;}
       <img src="images/Reviews/review3.jpg">
       <img src="images/Reviews/review4.jpg">
       <img src="images/Reviews/review5.jpg">
+      <img src="images/Reviews/review6.jpg">
+      <img src="images/Reviews/review7.jpg">      
     </div>
 
     <div class="close" onclick="closeReview('allReviews')">Back</div>
